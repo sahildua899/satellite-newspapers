@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+
+        
+        .logo-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .container-clock {    
+        position: relative;
+        /* background: #2f363e; */
+        /* min-height: 500px; */
+        border-radius: 20px;
+        border-top-left-radius: 225px;
+        border-top-right-radius: 225px;
+        /* box-shadow: 25px 25px 75px rgba(0,0,0,0.75),
+        10px 50px 70px rgba(0, 0, 0, 0.25); */
+        inset: 5px 5px 10px rgba(0,0,0,0.5);
+        inset: 5px 5px 20px  rgba(255,255,255,0.2);
+        inset: -5px -5px 15px rgba(0,0,0,0.75);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+}
+#time {
+    margin-bottom: 10px;
+    display: flex;
+    padding: 10px 20px;
+    font-size: 0.65em;
+    font-weight: 600;
+    /* border: 2px solid rgba(0, 0, 0, 0.5); */
+    border-radius: 40px;
+    /* box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5); */
+    inset: 5px 5px 20px rgba(255,255,255,0.2);
+    inset: -5px -5px 15px rgba(0,0,0,0.75);
+    background: #31383F;
+    margin-top: 20px;
+}
+
+#time div {
+    position: relative;
+    width: 20px;
+    text-align: center;
+    font-weight: 500;
+    color: var(--clr)
+}
+
+#time div:nth-child(1)::after,
+#time div:nth-child(2)::after {
+    content: ':';
+    position: absolute;
+    right: -4px;
+}
+#time div:last-child{
+    font-size: 0.9em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+}
+
+#time div:nth-child(2)::after {
+    animation: animate 1s steps(1) infinite;
+}
+
+@keyframes animate {
+    0% 
+    {
+        opacity: 1;
+    }   
+    50% 
+    {
+        opacity: 0;
+    }
+}
+
+/* Logo */
+.logo video {
+    width: 200px;
+}
+.light {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    min-height: 10vh;
+    width: 50%;
+}
+.bulb img {
+    width: 50px;
+    height: auto;
+    cursor: pointer;
+}
+
+
+
+/* Testing Css */
+
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.container-clock {
+    width: 30px;
+}
+.logo-bulb {
+    display: flex;
+    width: 70%;
+    align-items: center;
+    justify-content: center;
+}
+.logo {
+     width: 50%;
+     align-items: center;
+}
+
+
+
+    </style>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Header</title>
+</head>
+<body>
+    <div class="logo-container">
+        <div class="container-clock">
+                <div id="time">
+                <div id="hour" style="--clr:#fff;">00</div>
+                <div id="minutes" style="--clr:#fff;">00</div>
+                <div id="seconds" style="--clr:#fff;">00</div>
+                <div id="ampm">AM</div>
+            </div>
+        </div>
+        <div class="logo-bulb">
+        <div class="logo">
+            <video src="https://www.cnet.com/a/fly/neutron/images/logos/video/logo-red.webm" autoplay muted></video>
+        </div>
+        <!-- Bulb -->
+        <div class="light on">
+            <div class="bulb">
+                <img class="finalbulb" src="./images/on.png" alt=""></div>
+        </div>
+        <audio id="audio" src="./click.mp3" autostart="false"></audio>
+    </div></div>
+</body>
+</html>
